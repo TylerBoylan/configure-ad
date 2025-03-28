@@ -3,12 +3,7 @@
 </p>
 
 <h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
-This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
-
-
-<h2>Video Demonstration</h2>
-
-- ### [YouTube: How to Deploy on-premises Active Directory within Azure Compute](https://www.youtube.com)
+This tutorial outlines creating a domain controller virtual machine as well as a client virtual machine to join domains and access information on the domain controller.<br />
 
 <h2>Environments and Technologies Used</h2>
 
@@ -24,33 +19,73 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Resource Group
+- Virtual Network
+- Firewall
+- Ping
 
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/8RzNJt6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Create a Resource Group in Azure.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/6zyol9J.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Create the Domain Controller and Client virtual machine.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/o7usMKS.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Go into the Domain Controller virtual machine, Into the network settings and set the Domain Controller IP address to static.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/wQIlQdF.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Login to the Domain Controller's virtual machine with the username and password created earlier.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/lqqpx15.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Inside the virtual machine, right clcik the start menu and type wf.msc to get to the firewall settings.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/4zunIKz.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+After clicking into "Windows Defender Firewall Properties", turn off the firewall state for the Domain, Private, and Public Profiles.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/eh9ZCqE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Get the domain controllers private IP address and go into the clients virtual machines network settings and change the DNS server to the domain controllers private IP address.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/qsxvtCy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Inside the clients virtual machine, open PowerShell and attmep to ping the domain controller by typing ping and then the domain controllers private IP address.
 </p>
 <br />
