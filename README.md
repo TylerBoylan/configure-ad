@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
 </p>
 
-<h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
+<h1>Active Directory Deployed in the Cloud (Azure)</h1>
 This tutorial outlines creating a domain controller virtual machine as well as a client virtual machine to join domains and access information on the domain controller.<br />
 
 <h2>Environments and Technologies Used</h2>
